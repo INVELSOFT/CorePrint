@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buying Guides - CorePrint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .guide-hero {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      padding: 80px 8%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guide-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .guide-hero .eyebrow {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+    }
+
+    .guide-hero h1 {
+      margin: 0 auto 16px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.05;
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guide-hero p {
+      margin: 0 auto;
+      max-width: 620px;
+      color: #dbeafe;
+      font-size: 17px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guide-section {
+      padding: 64px 8%;
+      background: #f8fafc;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.7fr);
+      gap: 32px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .guide-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .guide-card {
+      background: white;
+      border-radius: 20px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .guide-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .guide-card-content {
+      padding: 26px;
+      display: grid;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .guide-card-meta {
+      display: flex;
+      gap: 18px;
+      color: #64748b;
+      font-size: 13px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .guide-card-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-card-title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.35;
+      color: #111827;
+    }
+
+    .guide-card-summary {
+      margin: 0;
+      color: #475569;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .guide-card-footer {
+      margin-top: auto;
+    }
+
+    .guide-card-footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #2563eb;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .guide-sidebar {
+      display: grid;
+      gap: 24px;
+    }
+
+    .search-panel,
+    .recent-panel,
+    .sidebar-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .search-panel h3,
+    .recent-panel h3,
+    .sidebar-card h3 {
+      margin: 0 0 18px;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    .search-field {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-field input {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid #dbe3ef;
+      font: inherit;
+      color: #102a43;
+      background: #f8fafc;
+    }
+
+    .search-field button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      min-width: 56px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .recent-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .recent-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .recent-item img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .recent-item-text h4 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: #111827;
+      line-height: 1.4;
+    }
+
+    .recent-item-text span {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .sidebar-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .sidebar-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.75;
+    }
+
+    .sidebar-card button {
+      padding: 14px 18px;
+      border: none;
+      border-radius: 14px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    @media (max-width: 1024px) {
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .guide-hero {
+        padding: 60px 5%;
+      }
+
+      .guide-section {
+        padding: 48px 5%;
+      }
+
+      .affiliate-hero {
+        padding: 50px 5%;
+      }
+
+      .guide-card img {
+        height: 220px;
+      }
+
+      .search-field {
+        flex-direction: column;
+      }
+
+      .search-field button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="SupportPlan.html">Plans</a>
+      <a href="Affliliate-Product.html">Products</a>
+      <a href="Privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="guide-hero">
+      <p class="eyebrow">Knowledge Hub</p>
+      <h1>Buying Guides</h1>
+      <p>Explore expert reviews, printer buying advice, and step-by-step recommendations to choose the right printer for your home or office.</p>
+    </section>
+
+    <section class="guide-section">
+      <div class="guide-grid">
+        <div>
+          <div class="guide-cards">
+            <article class="guide-card">
+              <img src="Images/HP Printer Image.jpg" alt="HP Smart Tank 5103">
+              <div class="guide-card-content">
+                <div class="guide-card-meta">
+                  <span>Admin</span>
+                  <span>21 Oct, 2025</span>
+                </div>
+                <h2 class="guide-card-title">HP Smart Tank 5103 Buying Guide in 2026: Is It Right for You?</h2>
+                <p class="guide-card-summary">HP Smart Tank 5103 Buying Guide in 2026: Is It Right for You? Refillable tanks, very low running costs, and s...</p>
+                <div class="guide-card-footer">
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <img src="Images/HP Printer Image.jpg" alt="HP Smart Tank 5101">
+              <div class="guide-card-content">
+                <div class="guide-card-meta">
+                  <span>Admin</span>
+                  <span>20 Oct, 2025</span>
+                </div>
+                <h2 class="guide-card-title">HP Smart Tank 5101 Buying Guide in 2026: Is It Right for You?</h2>
+                <p class="guide-card-summary">HP Smart Tank 5101 Buying Guide in 2026: Is It Right for You? HP Smart Tank 5101 cuts running costs with refi...</p>
+                <div class="guide-card-footer">
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <img src="Images/HP Printer Image.jpg" alt="HP DeskJet 2855e">
+              <div class="guide-card-content">
+                <div class="guide-card-meta">
+                  <span>Admin</span>
+                  <span>19 Oct, 2025</span>
+                </div>
+                <h2 class="guide-card-title">HP DeskJet 2855e Buying Guide in 2026: Is It Right for You?</h2>
+                <p class="guide-card-summary">HP DeskJet 2855e Buying Guide in 2026: Is It Right for You? For light, occasional home printing, the HP DeskJ...</p>
+                <div class="guide-card-footer">
+                  <a href="#">Read More →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="guide-sidebar">
+          <section class="search-panel">
+            <h3>Search Guides</h3>
+            <div class="search-field">
+              <input type="text" placeholder="Keywords...">
+              <button type="button">🔍</button>
+            </div>
+          </section>
+
+          <section class="recent-panel">
+            <h3>Recent Posts</h3>
+            <div class="recent-list">
+              <div class="recent-item">
+                <img src="Images/HP Printer Image.jpg" alt="Recent printer guide">
+                <div class="recent-item-text">
+                  <h4>HP Smart Tank 5103 Buying Guide in 2026: Is It Right for...</h4>
+                  <span>21 Oct, 2025</span>
+                </div>
+              </div>
+              <div class="recent-item">
+                <img src="Images/HP Printer Image.jpg" alt="Recent printer guide">
+                <div class="recent-item-text">
+                  <h4>HP Smart Tank 5101 Buying Guide in 2026: Is It Right for...</h4>
+                  <span>20 Oct, 2025</span>
+                </div>
+              </div>
+              <div class="recent-item">
+                <img src="Images/HP Printer Image.jpg" alt="Recent printer guide">
+                <div class="recent-item-text">
+                  <h4>HP DeskJet 2855e Buying Guide in 2026: Is It Right for...</h4>
+                  <span>19 Oct, 2025</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="sidebar-card">
+            <h3>Talk to an Expert</h3>
+            <p>Need support choosing a printer? Our certified team can help you pick the best model for your needs.</p>
+            <button type="button">Contact Us →</button>
+          </section>
+
+          <section class="sidebar-card">
+            <h3>Not sure what to buy?</h3>
+            <p>Our certified experts can guide you to the perfect printer for your needs.</p>
+            <button type="button">Get Free Advice →</button>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="SupportPlan.html">Plans</a>
+        <a href="Affliliate-Product.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => navMenu.classList.toggle('open'));
+    }
+  </script>
+</body>
+</html>

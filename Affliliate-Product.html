@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Products - CorePrint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .affiliate-hero {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      padding: 80px 8%;
+      text-align: center;
+      color: white;
+    }
+
+    .affiliate-hero h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      margin: 0 0 16px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .affiliate-hero p {
+      font-size: 18px;
+      color: #e0e7ff;
+      margin: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .affiliate-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .affiliate-section {
+      padding: 60px 8%;
+      background: #f8fafc;
+    }
+
+    .affiliate-disclosure {
+      max-width: 1300px;
+      margin: 0 auto 40px;
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .affiliate-disclosure-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .affiliate-disclosure p {
+      margin: 0;
+      color: #92400e;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .affiliate-disclosure strong {
+      color: #b45309;
+      font-weight: 800;
+    }
+
+    .brand-filters {
+      max-width: 1300px;
+      margin: 0 auto 40px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .brand-filter-btn {
+      padding: 10px 20px;
+      border: 1px solid #dbe3ef;
+      background: white;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      color: #475569;
+    }
+
+    .brand-filter-btn.active {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .brand-filter-btn:hover {
+      border-color: #2563eb;
+    }
+
+    .affiliate-products-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .product-info {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-brand {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #eef2ff;
+      color: #2563eb;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+
+    .product-brand.canon {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .product-brand.brother {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .product-brand.epson {
+      background: #d1fae5;
+      color: #059669;
+    }
+
+    .product-title {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.4;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .product-stars {
+      color: #f59e0b;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .product-rating-text {
+      color: #94a3b8;
+      font-size: 12px;
+    }
+
+    .product-btn {
+      width: 100%;
+      padding: 12px;
+      background: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      margin-top: auto;
+    }
+
+    .product-btn:hover {
+      background: #d97706;
+      transform: translateY(-2px);
+    }
+
+    .affiliate-cta {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      border-radius: 12px;
+      color: white;
+      padding: 40px;
+      text-align: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .affiliate-cta h3 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .affiliate-cta p {
+      margin: 0;
+      color: #e0e7ff;
+      font-size: 16px;
+    }
+
+    .affiliate-cta-btn {
+      padding: 12px 28px;
+      background: white;
+      color: #2563eb;
+      border: none;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .affiliate-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 1024px) {
+      .affiliate-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .affiliate-cta {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .affiliate-cta-btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .affiliate-products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-filters {
+        gap: 8px;
+      }
+
+      .brand-filter-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+
+      .affiliate-section {
+        padding: 40px 5%;
+      }
+
+      .affiliate-hero {
+        padding: 60px 5%;
+      }
+
+      .affiliate-disclosure {
+        flex-direction: column;
+      }
+
+      .affiliate-cta {
+        padding: 28px;
+      }
+
+      .affiliate-cta h3 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="index.html#wizard" class="nav-cta">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="affiliate-hero">
+      <div class="affiliate-badge">RECOMMENDED PRODUCTS</div>
+      <h1>Affiliate Products</h1>
+      <p>Top-rated printers handpicked by our experts — trusted by thousands of users worldwide.</p>
+    </section>
+
+    <section class="affiliate-section">
+      <div class="affiliate-disclosure">
+        <div class="affiliate-disclosure-icon">ⓘ</div>
+        <p><strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases. This helps us keep our support services free for everyone — thank you for your support!</p>
+      </div>
+
+      <div class="brand-filters">
+        <button class="brand-filter-btn active" data-brand="all">All Brands</button>
+        <button class="brand-filter-btn" data-brand="hp">HP</button>
+        <button class="brand-filter-btn" data-brand="canon">Canon</button>
+        <button class="brand-filter-btn" data-brand="brother">Brother</button>
+        <button class="brand-filter-btn" data-brand="epson">Epson</button>
+      </div>
+
+      <div class="affiliate-products-grid">
+        <!-- Product 1 -->
+        <div class="product-card" data-brand="hp">
+          <div class="product-image">
+            <img src="Images/HP Printer Image.jpg" alt="HP Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand">HP</span>
+            <h4 class="product-title">HP Smart-Tank 6001 Wireless Cartridge-Free All-In-One Printer, comes with up to...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-brand="hp">
+          <div class="product-image">
+            <img src="Images/HP Printer Image.jpg" alt="HP Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand">HP</span>
+            <h4 class="product-title">HP DeskJet 2755se Wireless Color Inkjet Printer, Print, Scan, Copy, 6 Months of I...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-brand="canon">
+          <div class="product-image">
+            <img src="Images/Cannon Printer.jpg" alt="Canon Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand canon">CANON</span>
+            <h4 class="product-title">Canon PIXMA TR4720 All-In-One Wireless Printer, Auto Document Feeder, Mobile Pri...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card" data-brand="canon">Images/Cannon Printer.jpg
+          <div class="product-image">
+            <img src="Images/Cannon Printer.jpg" alt="Canon Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand canon">CANON</span>
+            <h4 class="product-title">Canon PIXMA G6020 All-In-One Supertank Wireless Printer, Copier & Scanner, Works...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card" data-brand="brother">
+          <div class="product-image">
+            <img src="Images/Printer.jpg" alt="Brother Printer"> 
+          </div>
+          <div class="product-info">
+            <span class="product-brand brother">BROTHER</span>
+            <h4 class="product-title">Brother HL-L2460DW Wireless Compact Monochrome Laser Printer with Duplex, Mobile...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card" data-brand="brother">
+          <div class="product-image">
+            <img src="Images/Printer.jpg" alt="Brother Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand brother">BROTHER</span>
+            <h4 class="product-title">Brother DCP-L2640DW Wireless Compact Monochrome Multi-Function Laser Printer wit...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card" data-brand="epson">
+          <div class="product-image">
+            <img src="Images/Epson Printer.jpg" alt="Epson Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand epson">EPSON</span>
+            <h4 class="product-title">Epson EcoTank ET-2800 Wireless Color All-In-One Supertank Printer with Scan and...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card" data-brand="epson">
+          <div class="product-image">
+            <img src="Images/Epson Printer.jpg" alt="Epson Printer">
+          </div>
+          <div class="product-info">
+            <span class="product-brand epson">EPSON</span>
+            <h4 class="product-title">Epson EcoTank ET-4800 Wireless All-In-One Supertank Printer with Scanner, Copier...</h4>
+            <div class="product-rating">
+              <span class="product-stars">★★★★★</span>
+              <span class="product-rating-text">Amazon Choice</span>
+            </div>
+            <button class="product-btn">🛒 View on Amazon</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="affiliate-cta">
+        <div>
+          <h3>Need help with your printer?</h3>
+          <p>Our certified experts are available 24/7 to assist you.</p>
+        </div>
+        <button class="affiliate-cta-btn">Get Support →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="SupportPlan.html">Plans</a>
+        <a href="Affliliate-Product.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Brand filter functionality
+    document.querySelectorAll('.brand-filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Update active button
+        document.querySelectorAll('.brand-filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        // Filter products
+        const selectedBrand = this.dataset.brand;
+        document.querySelectorAll('.product-card').forEach(card => {
+          if (selectedBrand === 'all' || card.dataset.brand === selectedBrand) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

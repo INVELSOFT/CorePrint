@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Plans - CorePrint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pricing-hero {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      padding: 80px 8%;
+      text-align: center;
+      color: white;
+    }
+
+    .pricing-hero h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      margin: 0 0 16px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-hero p {
+      font-size: 18px;
+      color: #e0e7ff;
+      margin: 0;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .pricing-section {
+      padding: 80px 8%;
+      background: #f8fafc;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1300px;
+      margin: 0 auto 80px;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.16);
+    }
+
+    .pricing-card.featured {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-8px);
+      box-shadow: 0 24px 80px rgba(37, 99, 235, 0.4);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fbbf24;
+      color: #111827;
+      padding: 6px 16px;
+      border-radius: 0 0 8px 8px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pricing-top {
+      padding: 32px 28px;
+      border-top: 4px solid #2563eb;
+    }
+
+    .pricing-card.featured .pricing-top {
+      border-top: none;
+      padding-top: 48px;
+    }
+
+    .pricing-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .pricing-card-title {
+      flex: 1;
+    }
+
+    .pricing-card-title h3 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      font-weight: 900;
+      color: #111827;
+    }
+
+    .pricing-card.featured .pricing-card-title h3 {
+      color: white;
+    }
+
+    .pricing-card-title p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .pricing-card.featured .pricing-card-title p {
+      color: #e0e7ff;
+    }
+
+    .pricing-icon {
+      width: 48px;
+      height: 48px;
+      background: #eef2ff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .pricing-card.featured .pricing-icon {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .pricing-feature {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .pricing-card.featured .pricing-feature {
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pricing-feature-label {
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .pricing-card.featured .pricing-feature-label {
+      color: #bfdbfe;
+    }
+
+    .pricing-feature-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .pricing-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .pricing-card.featured .pricing-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .pricing-channel {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .pricing-card.featured .pricing-channel {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+
+    .pricing-channel.priority {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: white;
+    }
+
+    .pricing-bottom {
+      padding: 28px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .pricing-card.featured .pricing-bottom {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pricing-btn {
+      width: 100%;
+      padding: 14px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .pricing-card.featured .pricing-btn {
+      background: white;
+      color: #2563eb;
+    }
+
+    .pricing-card-advance .pricing-btn {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .pricing-card-advance .pricing-top {
+      border-top-color: #7c3aed;
+    }
+
+    .pricing-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .pricing-features {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-item {
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: #eef2ff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px;
+    }
+
+    .feature-item h4 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .feature-item p {
+      margin: 0;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .pricing-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+
+      .pricing-card.featured:hover {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-features {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-hero {
+        padding: 60px 8%;
+      }
+
+      .pricing-section {
+        padding: 60px 8%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="index.html#wizard" class="nav-cta">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pricing-hero">
+      <h1>Choose Your Plan</h1>
+      <p>Pick the plan that fits your needs.</p>
+    </section>
+
+    <section class="pricing-section">
+      <div class="pricing-cards">
+        <!-- Starter Plan -->
+        <div class="pricing-card">
+          <div class="pricing-top">
+            <div class="pricing-card-header">
+              <div class="pricing-card-title">
+                <h3>Starter</h3>
+                <p>Printer Care</p>
+              </div>
+              <div class="pricing-icon">🖨️</div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Coverage</div>
+              <div class="pricing-feature-content">
+                <span class="pricing-tag">1-Year Coverage</span>
+              </div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Software Related Printer Issues</div>
+              <div class="pricing-feature-content"></div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Support Channels</div>
+              <div class="pricing-feature-content">
+                <span class="pricing-channel">💬 Chat</span>
+                <span class="pricing-channel">📧 Email</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-bottom">
+            <button class="pricing-btn">Get Started →</button>
+          </div>
+        </div>
+
+        <!-- Enhanced Plan (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">MOST POPULAR</div>
+          <div class="pricing-top">
+            <div class="pricing-card-header">
+              <div class="pricing-card-title">
+                <h3>Enhanced</h3>
+                <p>Printer & Computer Care</p>
+              </div>
+              <div class="pricing-icon">🛡️</div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Coverage</div>
+              <div class="pricing-feature-content">
+                <span class="pricing-tag">3-Year Coverage</span>
+              </div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Software Related Printer & Computer Issues</div>
+              <div class="pricing-feature-content"></div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Support Channels</div>
+              <div class="pricing-feature-content">
+                <span class="pricing-channel">📞 Phone</span>
+                <span class="pricing-channel">💬 Chat</span>
+                <span class="pricing-channel">📧 Email</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-bottom">
+            <button class="pricing-btn">Get Started →</button>
+          </div>
+        </div>
+
+        <!-- Advance Plan -->
+        <div class="pricing-card pricing-card-advance">
+          <div class="pricing-top">
+            <div class="pricing-card-header">
+              <div class="pricing-card-title">
+                <h3>Advance</h3>
+                <p>Ultimate Care</p>
+              </div>
+              <div class="pricing-icon">✨</div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Coverage</div>
+              <div class="pricing-feature-content">
+                <span class="pricing-tag">5-Year Coverage</span>
+                <span class="pricing-tag">Unlimited Devices</span>
+              </div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Software Related Printer, Computer, Phone/Tablets Issues</div>
+              <div class="pricing-feature-content"></div>
+            </div>
+
+            <div class="pricing-feature">
+              <div class="pricing-feature-label">Support Channels + Priority</div>
+              <div class="pricing-feature-content">
+                <span class="pricing-channel">📞 Phone</span>
+                <span class="pricing-channel">💬 Chat</span>
+                <span class="pricing-channel">📧 Email</span>
+                <span class="pricing-channel priority">⭐ Priority</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-bottom">
+            <button class="pricing-btn">Get Started →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-features">
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <h4>Secure & Private</h4>
+          <p>Your data is always protected</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">👨‍💼</div>
+          <h4>Certified Technicians</h4>
+          <p>Trained & experienced experts</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <h4>Fast Resolution</h4>
+          <p>Most issues fixed same day</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="SupportPlan.html">Plans</a>
+        <a href="about.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

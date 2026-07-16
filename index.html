@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CorePrint Premium Printer Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn">Menu</button>
+
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="#wizard" class="nav-cta">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-text">
+          Choose your printer manufacturer from the list below to access detailed, step-by-step guidance for diagnosing
+          and resolving common printer issues, including appearing offline, wireless setup, printing blank pages,
+          displayed error codes, and scanner or multifunction failures.
+        </p>
+        <br>
+        <p class="eyebrow disclaimer">Disclaimer</p>
+        <p> We are not affiliated with, endorsed by, or associated with printer manufacturers such as HP,
+          Canon, Epson, or Brother. If you wish to contact your printer manufacturer directly, please visit their
+          official website for authorized support and assistance.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#wizard">Start Service</a>
+          <a class="btn secondary" href="Contact.html">Contact Support</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="status-line">
+          <span class="pulse"></span>
+          <span>Live support flow</span>
+        </div>
+        <!-- <div class="printer-box">
+          <div class="printer-top"></div>
+          <div class="printer-body"></div>
+          <div class="printer-paper"></div>
+        </div> -->
+        <div class="printer-box">
+          <img src="Images/Printer image .png" alt="Printer Support">
+        </div>
+        <div class="mini-stats">
+          <div>
+            <strong>24/7</strong>
+            <span>Enquiry intake</span>
+          </div>
+          <div>
+            <strong>10+</strong>
+            <span>Common issues</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-bar">
+      <span>Free diagnosis</span>
+      <span>No hidden charges</span>
+      <span>Fast callback request</span>
+      <span>Independent support</span>
+    </section>
+
+    <section class="wizard-section" id="wizard">
+      <div class="section-heading">
+        <p class="eyebrow">Support wizard</p>
+        <h2>Select your printer brand</h2>
+      </div>
+
+      <div class="wizard">
+        <div class="progress">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="wizard-step active" data-step="1">
+          <!-- <h3>Select printer brand</h3> -->
+          <div class="option-grid">
+            <button class="option-card" data-field="brand" data-value="HP">HP</button>
+            <button class="option-card" data-field="brand" data-value="Canon">Canon</button>
+            <button class="option-card" data-field="brand" data-value="Epson">Epson</button>
+            <button class="option-card" data-field="brand" data-value="Brother">Brother</button>
+            <button class="option-card" data-field="brand" data-value="Other">Other</button>
+          </div>
+          <div class="wizard-actions">
+            <button class="btn primary" id="nextStep1" disabled>Next</button>
+          </div>
+        </div>
+
+        <div class="wizard-step" data-step="2">
+          <h3>Type the model number of your printer.</h3>
+          <label class="model-inline">
+            Printer model number
+            <input type="text" id="modelNumber" required placeholder="Example: 123456 or HP DeskJet 3755">
+          </label>
+
+          <h3 class="step-subheading">Select the problem you're facing.</h3>
+          <div class="option-grid">
+            <button class="option-card" data-field="issue" data-value="Set-up a new printer">Set-up a new
+              printer</button>
+            <button class="option-card" data-field="issue" data-value="Can't Connect">Can't Connect</button>
+            <button class="option-card" data-field="issue" data-value="Printer Won't Print">Printer Won't Print</button>
+            <button class="option-card" data-field="issue" data-value="Printer Offline">Printer Offline</button>
+            <button class="option-card" data-field="issue" data-value="Printer Print blank paper">Printer Print blank
+              paper</button>
+            <button class="option-card" data-field="issue" data-value="Paper Jam">Paper Jam</button>
+            <button class="option-card" data-field="issue" data-value="Error code or Error message">Error code or Error
+              message</button>
+            <button class="option-card" data-field="issue" data-value="Scanner issue">Scanner issue</button>
+            <button class="option-card" data-field="issue" data-value="Printing Too Slowly">Printing Too Slowly</button>
+            <button class="option-card" data-field="issue" data-value="Poor Print Quality">Poor Print Quality</button>
+            <button class="option-card" data-field="issue" data-value="Making Strange Noises">Making Strange
+              Noises</button>
+            <button class="option-card" data-field="issue" data-value="Wireless Printer Keeps Disconnecting">Wireless
+              Printer Keeps Disconnecting</button>
+          </div>
+          <div class="wizard-actions">
+            <button class="btn ghost" data-back="1">Back</button>
+            <button class="btn primary" id="nextStep2" disabled>Next</button>
+          </div>
+          <p class="wizard-error" id="step2Error"></p>
+        </div>
+
+        <div class="wizard-step" data-step="3">
+          <div class="diagnosis-grid">
+            <div>
+              <h3>Which device is connected with the printer?</h3>
+              <div class="option-grid compact">
+                <button class="option-card" data-field="device" data-value="Windows computer">Windows computer</button>
+                <button class="option-card" data-field="device" data-value="Mac computer">Mac computer</button>
+                <button class="option-card" data-field="device" data-value="Chromebook">Chromebook</button>
+                <button class="option-card" data-field="device" data-value="Android phone">Android phone</button>
+                <button class="option-card" data-field="device" data-value="iPhone/iPad">iPhone/iPad</button>
+              </div>
+            </div>
+
+            <div class="question-panel">
+              <h3>Please answer the following questions.</h3>
+
+              <div class="question-block">
+                <p>Have you recently changed your ink cartridge?</p>
+                <div class="choice-row">
+                  <button class="choice-btn" data-field="inkChanged" data-value="Yes">Yes</button>
+                  <button class="choice-btn" data-field="inkChanged" data-value="No">No</button>
+                </div>
+              </div>
+
+              <div class="question-block">
+                <p>Have you recently changed your Internet service?</p>
+                <div class="choice-row">
+                  <button class="choice-btn" data-field="internetChanged" data-value="Yes">Yes</button>
+                  <button class="choice-btn" data-field="internetChanged" data-value="No">No</button>
+                </div>
+              </div>
+
+              <label class="check-line">
+                <input type="checkbox" id="sendInstructions" checked>
+                <span>Receive troubleshooting instructions on email.</span>
+              </label>
+
+              <label class="check-line">
+                <input type="checkbox" id="requestCallback" checked>
+                <span>Receive a call from an expert to help troubleshoot.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="wizard-actions">
+            <button class="btn ghost" data-back="2">Back</button>
+            <button class="btn primary" id="nextStep3" disabled>Next</button>
+          </div>
+          <p class="wizard-error" id="step3Error"></p>
+        </div>
+
+        <div class="wizard-step" data-step="4">
+          <h3>Enter enquiry details</h3>
+          <form class="form" id="wizardForm">
+            <label>
+              Full name
+              <input type="text" id="name" required placeholder="Enter your name">
+            </label>
+            <label>
+              Email
+              <input type="email" id="email" required placeholder="Enter your email">
+            </label>
+            <label>
+              Phone
+              <input type="tel" id="phone" required placeholder="Enter your phone number">
+            </label>
+            <label class="full">
+              Message
+              <textarea id="message" rows="4" placeholder="Describe your issue"></textarea>
+            </label>
+            <div class="wizard-actions full">
+              <button class="btn ghost" type="button" data-back="3">Back</button>
+              <button class="btn primary" type="submit">Review Details</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="wizard-step" data-step="5">
+          <div class="review-box">
+            <p class="eyebrow">Confirm enquiry</p>
+            <h3>Review customer details before submit.</h3>
+            <p class="review-note">
+              This is the exact information that can later be sent to Gmail, EmailJS,
+              Firebase, or Joomla CRM as a lead.
+            </p>
+
+            <div class="review-grid" id="reviewGrid"></div>
+
+            <div class="wizard-actions">
+              <button class="btn ghost" data-back="4">Back</button>
+              <button class="btn primary" id="submitLeadBtn">Submit Enquiry</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             STEP 6a — RESOLUTION CENTER
+        ════════════════════════════════════════ -->
+        <div class="wizard-step" data-step="6a">
+          <div class="rc-wrapper">
+
+            <div class="rc-title-block">
+              <h2 class="rc-title">RESOLUTION CENTER</h2>
+              <p class="rc-sub">To get immediate resolution, contact our certified experts.</p>
+            </div>
+
+            <div class="rc-card">
+              <p class="rc-callaway">
+                WE ARE JUST
+                <span class="rc-phone-badge">
+                  <span class="rc-headset">📞</span>
+                  <span class="rc-one">1</span>
+                </span>
+                CALL AWAY
+              </p>
+
+              <div class="rc-phones">
+                <div class="rc-phone-card">
+                  <span class="rc-flag">🇺🇸</span>
+                  <div>
+                    <span class="rc-country">United States</span>
+                    <strong class="rc-number">+1 888-900-8695</strong>
+                  </div>
+                </div>
+                <div class="rc-phone-card">
+                  <span class="rc-flag">🇬🇧</span>
+                  <div>
+                    <span class="rc-country">United Kingdom</span>
+                    <strong class="rc-number">+44 20-8040-0210</strong>
+                  </div>
+                </div>
+              </div>
+
+              <p class="rc-chat-note">💬 Prefer chat? Use the chat widget in the bottom-right and share your printer
+                issue along with model number.</p>
+            </div>
+
+            <div class="rc-continue-wrap">
+              <button class="btn rc-continue-btn" id="btnContinueToSteps">
+                CONTINUE TO SELF-TROUBLESHOOTING &nbsp;→
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             STEP 6b — SELF-TROUBLESHOOTING STEPS
+        ════════════════════════════════════════ -->
+        <div class="wizard-step" data-step="6b">
+          <div class="st-wrapper">
+
+            <div class="st-header">
+              <div class="st-header-left">
+                <div class="st-icon">🔧</div>
+                <div>
+                  <h4 class="st-header-title">SELF-TROUBLESHOOTING STEPS</h4>
+                  <p class="st-header-sub" id="stHeaderSub">Follow these step-by-step instructions based on the issue
+                    you selected.</p>
+                </div>
+              </div>
+              <div class="st-badge">🛡 Clear guidance</div>
+            </div>
+
+            <div class="st-issue-bar">
+              <span class="st-issue-icon">📶</span>
+              <div>
+                <strong class="st-issue-title" id="stIssueTitle">Issue</strong>
+                <p class="st-issue-sub">Follow the steps for your device type.</p>
+              </div>
+            </div>
+
+            <div class="st-columns" id="stColumns">
+              <div class="st-col" id="stColWindows">
+                <div class="st-col-header">
+                  <span>🪟</span>
+                  <strong id="stTitleWindows">Windows Steps</strong>
+                </div>
+                <ul class="st-checklist" id="stStepsWindows"></ul>
+              </div>
+              <div class="st-col" id="stColMac">
+                <div class="st-col-header">
+                  <span>🍎</span>
+                  <strong id="stTitleMac">Mac Steps</strong>
+                </div>
+                <ul class="st-checklist" id="stStepsMac"></ul>
+              </div>
+            </div>
+
+            <div class="st-finish-wrap">
+              <button class="btn rc-continue-btn" id="btnFinish">
+                Finish &nbsp;→
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             STEP 6c — THANK YOU
+        ════════════════════════════════════════ -->
+        <div class="wizard-step" data-step="6c">
+          <div class="ty-wrapper">
+
+            <div class="ty-header-card">
+              <div class="ty-check">✓</div>
+              <div>
+                <h2 class="ty-headline">THANK YOU FOR VISITING!</h2>
+                <p class="ty-name" id="tyCustomerName"></p>
+              </div>
+            </div>
+
+            <div class="ty-cards-row">
+              <div class="ty-card ty-card-dark">
+                <div class="ty-card-icon-wrap">⭐</div>
+                <h3>What Sets Us Apart</h3>
+                <p>Simple, secure, and expert-led help.</p>
+                <ul class="ty-list">
+                  <li>✅ Free consultation &amp; troubleshooting</li>
+                  <li>✅ Trusted, experienced, and certified experts</li>
+                  <li>✅ Security and privacy assurance</li>
+                  <li>✅ Quick resolution available 24×7 on chat and phone</li>
+                </ul>
+              </div>
+              <div class="ty-card ty-card-light">
+                <div class="ty-card-icon-wrap ty-heart">❤️</div>
+                <h3>We appreciate your help</h3>
+                <p>We appreciate your time and interest with us. Your help means the world to us! If you still have any
+                  questions or need assistance, please don't hesitate to reach out. Happy printing!</p>
+                <a class="btn primary" href="index.html" style="margin-top:22px;display:inline-flex;">🏠 Home</a>
+              </div>
+            </div>
+
+            <p class="ty-footer-note">🖨️ Thank you, and happy printing!</p>
+
+            <div class="wizard-actions" style="margin-top:8px;">
+              <button class="btn ghost" id="restartWizard">Start Over</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-heading">
+        <p class="eyebrow">Why choose us</p>
+        <h2>The Smart Way to FixPrinter Problems.</h2>
+      </div>
+      <!-- <div class="cards">
+        <article class="card">
+          <h3>Fast Resolution </h3>
+          <p> Most issue resolutions are completed within 10 minutes.</p>
+        </article>
+        <article class="card">
+          <h3>Certified Experts</h3>
+          <p>Our technicians are trained across all major printer brands and operating systems.</p>
+        </article>
+        <article class="card">
+          <h3>Free First Step</h3>
+          <p>Basic troubleshooting is completely free. Only pay if you need advanced expert help.</p>
+        </article>
+      </div> -->
+
+      <div class="why-boxes">
+
+  <div class="why-box why-blue">
+    <div class="why-icon">✓</div>
+
+    <div>
+      <h3>Easy to Follow</h3>
+      <p>
+        Simple step-by-step instructions anyone can understand
+      </p>
+    </div>
+  </div>
+
+  <div class="why-box why-green">
+    <div class="why-icon">🎧</div>
+
+    <div>
+      <h3>Expert Help</h3>
+      <p>
+        Professional help available 24/7 when you need it
+      </p>
+    </div>
+  </div>
+
+  <div class="why-box why-yellow">
+    <div class="why-icon">⚡</div>
+
+    <div>
+      <h3>Quick Solutions</h3>
+      <p>
+        Get help from home or office
+      </p>
+    </div>
+  </div>
+
+</div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="reviews-inner">
+        <p class="eyebrow">Customer reviews</p>
+        <h2>What Our Customers Say</h2>
+
+        <div class="reviews-grid" id="reviewsGrid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Fixed my HP printer offline issue in literally 5 minutes. The step-by-step guide was so clear!"</p>
+            <strong>— Sarah M., Texas</strong>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Called their expert line when DIY didn't work. Had my Canon printing again before I finished my coffee."
+            </p>
+            <strong>— James T., London</strong>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★☆</div>
+            <p>"Great free troubleshooting tool. Solved my Epson paper jam without needing to call anyone."</p>
+            <strong>— Priya K., Sydney</strong>
+          </article>
+        </div>
+
+        <form class="review-form" id="reviewForm">
+          <h3>Share Your Experience</h3>
+          <input type="text" id="reviewName" placeholder="Your name" required>
+          <textarea id="reviewText" rows="4" placeholder="Write your review..." required></textarea>
+          <button class="btn primary" type="submit">Submit Review</button>
+          <p class="review-status" id="reviewStatus"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="supportPlan.html">Plans</a>
+        <a href="Buying-Guide.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init("dZdAF7tC-v_UsPeDO");
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

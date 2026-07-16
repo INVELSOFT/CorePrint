@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About CorePrint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-hero {
+      padding: 72px 8%;
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-content h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.1;
+      margin: 16px 0 24px;
+      color: var(--text);
+    }
+
+    .about-content .eyebrow {
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .about-content h1 strong {
+      color: var(--blue);
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .about-content p:last-of-type {
+      margin-bottom: 32px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-card {
+      padding: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 32px;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .stat-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .badge-text strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .badge-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="index.html#wizard" class="nav-cta">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-hero">
+      <div class="about-content">
+        <p class="eyebrow">WHO WE ARE</p>
+        <h1>About <strong>CorePrint</strong></h1>
+
+        <p>
+          Welcome to CorePrint, your independent printer help team! We're not tied to any printer brands or manufacturers in any way; we're just here to help. Whether you're dealing with a stubborn error or a complete no-print situation, we've got you covered.
+        </p>
+
+        <p>
+          Pick your printer brand, tell us what's going wrong, and get straightforward, step-by-step fixes delivered on this site or straight to your inbox.
+        </p>
+
+        <p>
+          Need help right now? Chat with one of our friendly, certified experts or give us a call — we're ready to sort it out fast.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <strong>24/7</strong>
+            <span>Expert Consultation</span>
+          </div>
+          <div class="stat-card">
+            <strong>98%</strong>
+            <span>Resolution Rate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <img src="Images/Printer image .png" alt="CorePrint Expert Technician">
+        <div class="badge">
+          <div class="badge-icon">✓</div>
+          <div class="badge-text">
+            <strong>Certified Technicians</strong>
+            <span>Trusted since 2015</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-heading">
+        <h2>Why Choose CorePrint</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Our mission</h3>
+          <p>Help printer users find clear next steps without confusion or technical overload.</p>
+        </article>
+        <article class="card">
+          <h3>Our approach</h3>
+          <p>Start with a guided diagnosis, then collect lead details for email or CRM follow-up.</p>
+        </article>
+        <article class="card">
+          <h3>Independent support</h3>
+          <p>We are independent and not affiliated with printer manufacturers or their trademarks.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="index.html#wizard">Plans</a>
+        <a href="about.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

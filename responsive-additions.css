@@ -1,0 +1,143 @@
+/* Mobile-friendly responsive overrides */
+@media (max-width: 900px) {
+  .hero,
+  .page-hero,
+  .contact-layout,
+  .diagnosis-grid,
+  .option-grid,
+  .cards,
+  .reviews-grid,
+  .footer-inner,
+  .form,
+  .review-grid,
+  .why-boxes,
+  .pricing-cards,
+  .pricing-features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .page-hero,
+  .wizard-section,
+  .features,
+  .contact-layout,
+  .about-hero,
+  .contact-hero,
+  .pricing-section,
+  .pricing-hero {
+    padding: 54px 6%;
+  }
+
+  .page-hero,
+  .pricing-hero {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .section-heading h2,
+  .page-hero h1,
+  .pricing-hero h1,
+  .about-content h1,
+  .contact-intro h1 {
+    font-size: clamp(30px, 6vw, 48px);
+  }
+
+  .footer-inner {
+    gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  .footer-col,
+  .footer-col-contact,
+  .footer-brand,
+  .footer-associates {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    padding-top: 28px;
+  }
+
+  .hero-actions,
+  .form,
+  .model-inline,
+  .review-grid,
+  .progress,
+  .option-grid,
+  .cards,
+  .why-boxes,
+  .pricing-features {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    padding: 16px 5%;
+  }
+
+  .hero,
+  .page-hero,
+  .pricing-section,
+  .contact-layout,
+  .about-hero,
+  .contact-hero,
+  .pricing-hero {
+    padding: 48px 5%;
+  }
+
+  .hero h1,
+  .page-hero h1,
+  .pricing-hero h1,
+  .section-heading h2 {
+    font-size: clamp(26px, 10vw, 38px);
+  }
+
+  .hero-text,
+  .page-hero p,
+  .footer-brand p,
+  .why-box p,
+  .review-note,
+  .pricing-card-title p,
+  .pricing-feature-label,
+  .pricing-channel,
+  .footer-col-contact p,
+  .footer-col a,
+  .footer-col-contact a {
+    font-size: 14px;
+  }
+
+  .btn,
+  .hero-actions,
+  .footer-btn,
+  .pricing-btn {
+    width: 100%;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .footer-inner {
+    display: grid;
+    gap: 20px;
+  }
+
+  .footer-col,
+  .footer-col-contact,
+  .footer-brand {
+    align-items: flex-start;
+  }
+
+  .footer-disclaimer {
+    padding: 18px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+  }
+}

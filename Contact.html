@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact CorePrint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-hero {
+      padding: 72px 8%;
+      background: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .contact-intro h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.1;
+      margin: 16px 0 24px;
+      color: var(--text);
+    }
+
+    .contact-intro h1 strong {
+      color: var(--blue);
+    }
+
+    .contact-intro .eyebrow {
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .contact-intro p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-method {
+      padding: 24px;
+      background: #f8fafc;
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-method-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .contact-method-content h4 {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-method-content p {
+      margin: 8px 0 0;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .contact-method-content p a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact-form-section h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .contact-form-section > p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .contact-form-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form-grid label {
+      display: grid;
+      gap: 8px;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-form-grid input,
+    .contact-form-grid select {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .contact-form-grid input::placeholder {
+      color: #cbd5e1;
+    }
+
+    .contact-form-grid input:focus,
+    .contact-form-grid select:focus {
+      outline: 3px solid rgba(37, 99, 235, 0.18);
+      border-color: var(--blue);
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .submit-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    .contact-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .contact-submit:hover {
+      background: #1d4ed8;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .contact-hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-box {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="index.html#wizard" class="nav-cta">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="contact-intro">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h1>We're Here<br><strong>To Help You</strong></h1>
+        
+        <p>Our team of experienced specialists is available 24/7 to assist you with any printer-related questions or issues.</p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">📞</div>
+            <div class="contact-method-content">
+              <h4>Call Us</h4>
+              <p>🇺🇸 +1 888-900-8695</p>
+              <p>🇬🇧 +44 20-8040-0210</p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">✉️</div>
+            <div class="contact-method-content">
+              <h4>Email Us</h4>
+              <p><a href="mailto:support@coreprint.com">support@coreprint.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-section">
+        <h3>Send Us a Message</h3>
+        <p>Feel free to submit your query below or reach out using the contact details provided.</p>
+
+        <div class="contact-form-box">
+          <form class="contact-form" id="contactForm">
+            <div class="contact-form-grid">
+              <label>
+                Full Name
+                <input type="text" id="contactName" required placeholder="John Doe">
+              </label>
+              <label>
+                Email Address
+                <input type="email" id="contactEmail" required placeholder="you@email.com">
+              </label>
+            </div>
+
+            <div class="contact-form-grid">
+              <label>
+                Country
+                <select id="contactCountry" required>
+                  <option value="">Select</option>
+                  <option value="USA">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>
+                Phone Number
+                <input type="tel" id="contactPhone" placeholder="+1 (555) 000-0000">
+              </label>
+            </div>
+
+            <div class="contact-form-grid">
+              <label>
+                Printer Brand
+                <select id="contactBrand" required>
+                  <option value="">Select Printer Brand</option>
+                  <option value="HP">HP</option>
+                  <option value="Canon">Canon</option>
+                  <option value="Epson">Epson</option>
+                  <option value="Brother">Brother</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>
+                Printer Issue
+                <select id="contactIssue" required>
+                  <option value="">Select Printer Issue</option>
+                  <option value="Can't Connect">Can't Connect</option>
+                  <option value="Printer Offline">Printer Offline</option>
+                  <option value="Won't Print">Won't Print</option>
+                  <option value="Paper Jam">Paper Jam</option>
+                  <option value="Error Code">Error Code</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <button type="submit" class="contact-submit">Send Message →</button>
+            <p class="submit-note">You can expect a response within 15 minutes during business hours.</p>
+            <p class="form-message" id="contactStatus"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="index.html#wizard">Plans</a>
+        <a href="about.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

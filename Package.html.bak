@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thailand Explorer Package — Package</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive-additions.css">
+  <style>
+    /* Page-specific styles kept small to avoid touching global css */
+    .hero{background:linear-gradient(90deg, rgba(7,102,136,0.9), rgba(0,166,153,0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;color:#fff;padding:80px 20px}
+    .hero .container{max-width:1100px;margin:0 auto}
+    .hero h1{font-size:42px;margin:0 0 8px}
+    .hero p.lead{font-size:18px;opacity:0.95}
+    .overview{max-width:1100px;margin:20px auto;padding:18px}
+    .overview .quick{display:flex;flex-wrap:wrap;gap:12px}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:18px 0}
+    .pkg-card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 4px 18px rgba(1,24,39,0.06)}
+    .itinerary{overflow:auto;white-space:nowrap;padding:12px 0}
+    .day{display:inline-block;width:220px;margin-right:12px;vertical-align:top}
+    .day img{width:100%;height:120px;object-fit:cover;border-radius:6px}
+    .section-title{font-size:20px;margin:10px 0 14px;color:#084c61}
+    .pricing{display:flex;gap:12px;flex-wrap:wrap}
+    .price-card{flex:1 1 220px;background:linear-gradient(180deg,#f7fbfd,#eaf7f8);padding:18px;border-radius:8px;text-align:center}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+    .faq .q{border-bottom:1px solid #eee;padding:10px 0}
+    .enquiry{background:linear-gradient(90deg,#053b4b,#068b8b);color:#fff;padding:18px;border-radius:8px}
+    .enquiry form input,.enquiry form textarea{width:100%;padding:10px;margin:6px 0;border-radius:6px;border:1px solid rgba(255,255,255,0.15)}
+    @media (max-width:640px){.hero h1{font-size:28px}.day{width:200px}}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container" style="max-width:1100px;margin:18px auto;display:flex;justify-content:space-between;align-items:center">
+    <div style="font-weight:700;color:#07424a">GOINGGLY</div>
+    <div><a href="index.html">Home</a> • <a href="Package.html">Packages</a> • <a href="Contact.html">Contact</a></div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Thailand Explorer Package</h1>
+    <p class="lead">Bangkok • Pattaya • Phuket — 7 Nights / 8 Days — Customisable itineraries</p>
+    <p style="margin-top:18px"><a href="#enquire" class="button">Enquire Now</a></p>
+  </div>
+</section>
+
+<main>
+  <section class="overview">
+    <div class="pkg-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <h2 class="section-title">Package Overview</h2>
+          <p>Experience the best of Thailand with bustling cities, stunning islands and unforgettable memories. Ideal for couples, friends and families.</p>
+          <div class="quick">
+            <div>Duration: 7 Nights / 8 Days</div>
+            <div>Destinations: Bangkok, Pattaya, Phuket</div>
+            <div>Type: Leisure • Sightseeing • Beach Holiday</div>
+          </div>
+        </div>
+        <div style="min-width:220px;text-align:right">
+          <div style="background:#fff;color:#04727a;padding:12px;border-radius:8px;display:inline-block">From ₹59,999 /- per person</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section-title">Day-wise Itinerary</h3>
+    <div class="itinerary">
+      <div class="day pkg-card">
+        <img src="https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?auto=format&fit=crop&w=800&q=60" alt="Bangkok">
+        <h4>Day 1 — Arrival in Bangkok</h4>
+        <p>Arrive at Bangkok. Transfer to hotel. Evening at leisure.</p>
+      </div>
+      <div class="day pkg-card">
+        <img src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=800&q=60" alt="Bangkok tour">
+        <h4>Day 2 — Bangkok City Tour</h4>
+        <p>Guided sightseeing of Grand Palace, temples and markets.</p>
+      </div>
+      <div class="day pkg-card">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=60" alt="Pattaya">
+        <h4>Day 3 — Transfer to Pattaya</h4>
+        <p>Transfer to Pattaya. Explore beaches and nightlife.</p>
+      </div>
+      <div class="day pkg-card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Phuket">
+        <h4>Day 4 — Flight to Phuket</h4>
+        <p>Fly to Phuket. Island hopping in the afternoon.</p>
+      </div>
+      <div class="day pkg-card">
+        <img src="https://images.unsplash.com/photo-1505765051886-74a1f7b2a2f9?auto=format&fit=crop&w=800&q=60" alt="Phuket Beach">
+        <h4>Days 5–7 — Phuket & Activities</h4>
+        <p>Leisure days with optional tours: Phi Phi, snorkelling, dinner cruise.</p>
+      </div>
+    </div>
+
+    <h3 class="section-title">Hotel Details</h3>
+    <div class="card-grid">
+      <div class="pkg-card">
+        <img src="Images/Printer.jpg" alt="Bangkok Hotel" style="width:100%;height:140px;object-fit:cover;border-radius:6px">
+        <h4>Furama Silom Hotel — Bangkok</h4>
+        <p>Breakfast • Pool • Free WiFi</p>
+      </div>
+      <div class="pkg-card">
+        <img src="Images/HP Printer Image.jpg" alt="Pattaya Hotel" style="width:100%;height:140px;object-fit:cover;border-radius:6px">
+        <h4>A-One The Royal Cruise — Pattaya</h4>
+        <p>Breakfast • Sea View • Spa</p>
+      </div>
+      <div class="pkg-card">
+        <img src="Images/Cannon Printer.jpg" alt="Phuket Hotel" style="width:100%;height:140px;object-fit:cover;border-radius:6px">
+        <h4>Patong Resort Hotel — Phuket</h4>
+        <p>Breakfast • Beach Access • Pool</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px">
+      <div class="pkg-card">
+        <h3 class="section-title">Inclusions</h3>
+        <ul>
+          <li>7 nights accommodation with breakfast</li>
+          <li>Airport transfers (SIC)</li>
+          <li>All sightseeing as per itinerary</li>
+          <li>Island hopping tour & transfers</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <h3 class="section-title">Exclusions</h3>
+        <ul>
+          <li>International flights</li>
+          <li>Visa & travel insurance</li>
+          <li>Personal expenses & tips</li>
+          <li>Peak season surcharges (if any)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="section-title">Activities Covered</h3>
+    <div class="card-grid">
+      <div class="pkg-card"> <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" style="height:110px;object-fit:cover;border-radius:6px"><h4>Phi Phi Island Tour</h4></div>
+      <div class="pkg-card"> <img src="https://images.unsplash.com/photo-1519817914152-22f2f8e9c1f2?auto=format&fit=crop&w=800&q=60" style="height:110px;object-fit:cover;border-radius:6px"><h4>Safari World</h4></div>
+      <div class="pkg-card"> <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60" style="height:110px;object-fit:cover;border-radius:6px"><h4>Dinner Cruise</h4></div>
+      <div class="pkg-card"> <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=60" style="height:110px;object-fit:cover;border-radius:6px"><h4>Island Hopping</h4></div>
+    </div>
+
+    <h3 class="section-title">Pricing & Package Options</h3>
+    <div class="pricing">
+      <div class="price-card pkg-card">
+        <h4>Standard Package</h4>
+        <div style="font-weight:700;font-size:20px;margin:8px 0">₹59,999 /-</div>
+        <div>7 Nights / 8 Days</div>
+        <p><a class="button" href="#enquire">Book Now</a></p>
+      </div>
+      <div class="price-card pkg-card">
+        <h4>Deluxe Package</h4>
+        <div style="font-weight:700;font-size:20px;margin:8px 0">₹74,999 /-</div>
+        <div>7 Nights / 8 Days</div>
+        <p><a class="button" href="#enquire">Book Now</a></p>
+      </div>
+      <div class="price-card pkg-card">
+        <h4>Premium Package</h4>
+        <div style="font-weight:700;font-size:20px;margin:8px 0">₹94,999 /-</div>
+        <div>7 Nights / 8 Days</div>
+        <p><a class="button" href="#enquire">Book Now</a></p>
+      </div>
+    </div>
+
+    <h3 class="section-title">Gallery</h3>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60" style="width:100%;height:100px;object-fit:cover;border-radius:6px">
+      <img src="https://images.unsplash.com/photo-1493557102241-1b7a7ecb3a39?auto=format&fit=crop&w=800&q=60" style="width:100%;height:100px;object-fit:cover;border-radius:6px">
+      <img src="https://images.unsplash.com/photo-1505765051886-74a1f7b2a2f9?auto=format&fit=crop&w=800&q=60" style="width:100%;height:100px;object-fit:cover;border-radius:6px">
+      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=60" style="width:100%;height:100px;object-fit:cover;border-radius:6px">
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:18px">
+      <div>
+        <h3 class="section-title">Frequently Asked Questions</h3>
+        <div class="faq">
+          <div class="q"><strong>Do Indian citizens need a visa for Thailand?</strong><div>Some categories need visa; check government advisory.</div></div>
+          <div class="q"><strong>What currency is used in Thailand?</strong><div>Thai Baht (THB) is the local currency.</div></div>
+          <div class="q"><strong>Are meals included in the package?</strong><div>Breakfast is included; other meals as specified.</div></div>
+        </div>
+      </div>
+
+      <aside id="enquire">
+        <div class="enquiry">
+          <h3>Enquire Now / Book This Package</h3>
+          <form action="#" onsubmit="alert('Enquiry submitted — demo only');return false">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="date" placeholder="Travel Date">
+            <textarea name="message" rows="4" placeholder="Message / Special Requests"></textarea>
+            <button type="submit" style="background:#fff;color:#05747a;padding:10px 12px;border-radius:6px;border:none;margin-top:6px;cursor:pointer">Submit Enquiry</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <h3 class="section-title">What Our Travelers Say</h3>
+    <div class="card-grid">
+      <div class="pkg-card"> <strong>Riya Sharma</strong><p>"The Thailand trip was absolutely amazing!"</p></div>
+      <div class="pkg-card"> <strong>Amit Verma</strong><p>"Great hotels, exciting tours and excellent service."</p></div>
+      <div class="pkg-card"> <strong>Neha & Family</strong><p>"We had a fantastic family vacation. Highly recommended."</p></div>
+    </div>
+
+  </section>
+</main>
+
+<footer style="background:#01383f;color:#fff;padding:24px;margin-top:22px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      <h4>GOINGGLY</h4>
+      <p>Travel consciously with curated experiences that inspire.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>+91 98765 43210 • info@goinggly.com</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Small interactions: make FAQ toggles
+document.querySelectorAll('.faq .q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    q.classList.toggle('open');
+    const panel = q.querySelector('div');
+    if(panel.style.display==='block') panel.style.display='none'; else panel.style.display='block';
+  });
+  // hide answers initially
+  const panel = q.querySelector('div'); if(panel) panel.style.display='none';
+});
+</script>
+
+</body>
+</html>
