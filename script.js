@@ -418,20 +418,37 @@ if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const contactLead = {
+    const contactStatus = document.getElementById("contactStatus");
+    const country = document.getElementById("contactCountry").value;
+
+    const templateParams = {
       name: document.getElementById("contactName").value,
       email: document.getElementById("contactEmail").value,
       phone: document.getElementById("contactPhone").value,
-      subject: document.getElementById("contactSubject").value,
-      message: document.getElementById("contactMessage").value
+      brand: document.getElementById("contactBrand").value,
+      issue: document.getElementById("contactIssue").value,
+      model: "N/A",
+      device: "N/A",
+      inkChanged: "N/A",
+      internetChanged: "N/A",
+      sendInstructions: "N/A",
+      requestCallback: "N/A",
+      message: `Submitted via Contact page. Country: ${country}`
     };
 
-    console.log("Contact enquiry:", contactLead);
-
-    document.getElementById("contactStatus").textContent =
-      "Enquiry captured on frontend. Next step: connect EmailJS or Joomla CRM.";
-
-    contactForm.reset();
+    emailjs.send(
+      "service_x8r4jpj",
+      "template_5iede4d",
+      templateParams
+    )
+      .then(function () {
+        contactStatus.textContent = "Thanks! Your message has been sent — we'll get back to you shortly.";
+        contactForm.reset();
+      })
+      .catch(function (error) {
+        console.log("FULL ERROR:", error);
+        contactStatus.textContent = "Something went wrong sending your message. Please try again or call us directly.";
+      });
   });
 }
 
