@@ -372,7 +372,7 @@ if (submitLeadBtn) {
 
         console.log("SUCCESS!", response.status, response.text);
 
-        showSolution();
+        window.location.href = "thank-you.html";
 
       })
 
