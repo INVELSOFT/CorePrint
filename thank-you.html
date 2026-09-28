@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - CorePrint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ty-hero {
+      padding: 96px 8%;
+      background: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ty-card {
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .ty-icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: white;
+    }
+
+    .ty-card h1 {
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .ty-card h1 strong {
+      color: var(--blue);
+    }
+
+    .ty-card p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .ty-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      .ty-hero {
+        padding: 64px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">CP</span>
+      <span>CorePrint</span>
+    </a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="index.html#wizard" class="nav-cta">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ty-hero">
+      <div class="ty-card">
+        <div class="ty-icon">✓</div>
+        <h1>Thank <strong>You!</strong></h1>
+        <p>Your message has been received. One of our support specialists will get back to you shortly — usually within 24 hours.</p>
+        <div class="ty-actions">
+          <a class="btn primary" href="index.html">Back to Home</a>
+          <a class="btn secondary" href="Buying-Guide.html">Browse Buying Guides</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo footer-logo" href="index.html">
+          <span class="logo-mark">CP</span>
+          <span>Core<span>Print</span></span>
+        </a>
+        <p>Your trusted partner for expert printer help, troubleshooting guidance, and professional advice.</p>
+        <div class="footer-associates">
+          <span>amazon</span>
+          <span>Associates</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="index.html#wizard">Plans</a>
+        <a href="Buying-Guide.html">Buying Guides</a>
+        <a href="Contact.html">Submit Review</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="Contact.html">Contact Us</a>
+        <a href="Privacy.html">Privacy Policy</a>
+      </div>
+
+      <div class="footer-col-contact">
+        <h4>Get In Touch</h4>
+        <div>
+          <p>EMAIL</p>
+          <a href="mailto:support@coreprint.com">✉️ support@coreprint.com</a>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <a href="tel:+18889008695">📞 +1 888-900-8695 (USA)</a>
+          <a href="tel:+442080400210">📞 +44 20-8040-0210 (UK)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-disclaimer">
+        <p><strong>Disclaimer:</strong> CorePrint operates as an independent third-party help site. We are not affiliated with, endorsed by, or connected to any printer brands shown here. We provide troubleshooting guides and expert tips to help fix printer issues. We are not liable for any damage that may occur while following our instructions.</p>
+      </div>
+      <p style="text-align: center; color: #64748b; font-size: 13px; margin-top: 24px;">© 2025 CorePrint. Independent support provider. Not affiliated with HP, Canon, Epson, or Brother.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

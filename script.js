@@ -442,8 +442,8 @@ if (contactForm) {
       templateParams
     )
       .then(function () {
-        contactStatus.textContent = "Thanks! Your message has been sent — we'll get back to you shortly.";
         contactForm.reset();
+        window.location.href = "thank-you.html";
       })
       .catch(function (error) {
         console.log("FULL ERROR:", error);
